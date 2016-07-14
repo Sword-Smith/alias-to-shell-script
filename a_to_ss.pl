@@ -77,3 +77,10 @@ while ( ! eof($fh) ) {
 }
 close($fh) || warn "Close failed: $!";
 chmod 0755, @filenames;
+
+# Delete scripts representing old aliases
+opendir( my $dh, $TARGET_FOLDER) || die "Failed to open directory $TARGET_FOLDER";
+my @files = readdir $dh;
+my @files = grep { !( $TARGET_FOLDER . $_ ~~ [@filenames] ) && !($_ ~~ ['.', '..'] ) } @files;
+say "deleting old script representing discontinued alias: $_" for @files;
+unlink map { $TARGET_FOLDER . $_ } @files;
