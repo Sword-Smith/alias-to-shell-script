@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 use File::HomeDir;
 use File::Which qw(which);
 use 5.22.1;
