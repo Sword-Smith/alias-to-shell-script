@@ -155,7 +155,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=/home/thor/scripts/:$PATH
+export PATH=$HOME/scripts/:$PATH
 
 LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 LIBRARY_PATH=/usr/lib32:$LIBRARY_PATH
